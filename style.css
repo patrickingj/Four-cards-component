@@ -1,0 +1,192 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --ff: 'Poppins', sans-serif;
+  --fw-thin: 200;
+  --fw-base: 400;
+  --fw-bold: 600;
+  
+  --color-red: hsl(0, 78%, 62%);
+  --color-cyan: hsl(180, 62%, 55%);
+  --color-orange: hsl(34, 97%, 64%);
+  --color-blue: hsl(212, 86%, 64%);
+  --color-darkBlue: hsl(234, 12%, 34%);
+  --color-grayishBlue: hsl(229, 6%, 66%);
+  --color-lightGray: hsl(0, 0%, 98%);
+}
+
+body {
+  margin: 2rem;
+  font-family: var(--ff);
+  display: grid;
+  place-items: center;
+  font-weight: var(--fw-base);
+}
+
+@media (min-width: 600px) {
+  body {
+    height: 100vh;
+  }
+}
+
+
+main {
+  display: grid;
+  gap: 4rem;
+}
+
+.intro {
+  display: grid;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: var(--fw-thin);
+  color: var(--color-darkBlue);
+}
+
+header p {
+  font-size: 1.6rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-darkBlue);
+}
+
+p {
+  font-size: 0.9rem;
+  color: var(--color-grayishBlue);
+}
+
+.card-gridflow {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 37.5rem) {
+  .intro {
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+  }
+  
+  .card-gridflow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 64rem) {
+  .card-gridflow {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    
+  }
+  .supervisor {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+  }
+  .team-builder {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+  }
+  .karma {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 2;
+  }
+  .calculator {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 2;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1rem 1.5rem hsla(229, 6%, 66%, 0.4);
+}
+
+h2 {
+  color: var(--color-darkBlue);
+}
+
+.card img {
+  align-self: flex-end;
+}
+
+.supervisor {
+  position: relative;
+  overflow: hidden;
+}
+.supervisor::before {
+  content:'';
+  position: absolute;
+  background-color: var(--color-cyan);
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left:0;
+}
+
+.team-builder {
+  position: relative;
+  overflow: hidden;
+}
+.team-builder::before {
+  content:'';
+  position: absolute;
+  background-color: var(--color-red);
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left:0;
+}
+
+.karma {
+  position: relative;
+  overflow: hidden;
+}
+.karma::before {
+  content:'';
+  position: absolute;
+  background-color: var(--color-orange);
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left:0;
+}
+
+
+.calculator {
+  position: relative;
+  overflow: hidden;
+}
+.calculator::before {
+  content:'';
+  position: absolute;
+  background-color: var(--color-blue);
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left:0;
+}
