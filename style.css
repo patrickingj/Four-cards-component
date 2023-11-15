@@ -42,13 +42,6 @@ body {
   font-weight: var(--fw-base);
 }
 
-@media (min-width: 600px) {
-  body {
-    height: 100vh;
-  }
-}
-
-
 main {
   display: grid;
   gap: 4rem;
@@ -82,6 +75,9 @@ p {
 }
 
 @media (min-width: 37.5rem) {
+  body {
+    height: 100vh;
+  }
   .intro {
     text-align: center;
     max-width: 50%;
@@ -93,6 +89,9 @@ p {
   }
 }
 @media (min-width: 64rem) {
+  body {
+    margin: 5rem;
+  }
   .card-gridflow {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
